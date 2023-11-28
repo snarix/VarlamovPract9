@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VarlamovPract9.MainPage">
+
+    <ScrollView>
+        <StackLayout Padding="10" 
+                     Spacing="15">
+            <Label Text="Имя" />
+            <Entry x:Name="Name" />
+            
+            <Label Text="Фамилия" />
+            <Entry x:Name="Surname" />
+
+            <Label Text="Отчество" />
+            <Entry x:Name="Otchestvo" />
+
+            <Label Text="Возраст" />
+            <Entry x:Name="Age"
+                   Keyboard="Numeric" />
+
+            <Label Text="Пол"
+                   VerticalOptions="Center"/>
+            <Picker Title="Выберите пол"
+                    x:Name="Gender">
+                <Picker.Items>
+                    <x:String>Мужской</x:String>
+                    <x:String>Женский</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <StackLayout Orientation="Vertical"
+                         Margin="10, 0, 10, 90"
+                         HeightRequest="40">
+                <Button Clicked="LoadPhoto"
+                        Text="Загрузить фото"/>
+                <Image 
+                       x:Name="loadedImage"
+                       HeightRequest="200"
+                       WidthRequest="200"/>
+            </StackLayout>
+            
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Нужно общежитие?"
+                       Margin="10"/>
+                <Switch x:Name="NeedsDormitorySwitch"
+                        HorizontalOptions="EndAndExpand"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Является старостой?"
+                       Margin="10"/>
+                <Switch x:Name="IsMonitorSwitch"
+                        HorizontalOptions="EndAndExpand"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Средний балл"
+                       VerticalOptions="Center"
+                       Margin="10"/>
+                <Label x:Name="Rate"
+                       Text="3    "
+                       VerticalOptions="Center"
+                       Margin="10"/>
+                <Stepper x:Name="stepperAvgRate"
+                         Minimum="2.0"
+                         Maximum="5.0"
+                         Increment="0.1"
+                         Value="3"
+                         ValueChanged="stepperAvgRate_ValueChanged"/>
+            </StackLayout>
+
+            <Button Clicked="SaveClicked" 
+                    Text="Сохранить" />
+        </StackLayout>
+    </ScrollView>
+
+
+</ContentPage>
