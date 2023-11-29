@@ -30,7 +30,7 @@
             </Picker>
 
             <StackLayout Orientation="Vertical"
-                         Margin="10, 0, 10, 90"
+                         Margin="10, 0, 10, 150"
                          HeightRequest="40">
                 <Button Clicked="LoadPhoto"
                         Text="Загрузить фото"/>
@@ -43,15 +43,25 @@
             <StackLayout Orientation="Horizontal">
                 <Label Text="Нужно общежитие?"
                        Margin="10"/>
-                <Switch x:Name="NeedsDormitorySwitch"
-                        HorizontalOptions="EndAndExpand"/>
+                <Picker Title="Да или Нет?"
+                    x:Name="obsaga">
+                    <Picker.Items>
+                        <x:String>Да</x:String>
+                        <x:String>Нет</x:String>
+                    </Picker.Items>
+                </Picker>
             </StackLayout>
 
             <StackLayout Orientation="Horizontal">
                 <Label Text="Является старостой?"
                        Margin="10"/>
-                <Switch x:Name="IsMonitorSwitch"
-                        HorizontalOptions="EndAndExpand"/>
+                <Picker Title="Да или Нет?"
+                    x:Name="starosta">
+                    <Picker.Items>
+                        <x:String>Да</x:String>
+                        <x:String>Нет</x:String>
+                    </Picker.Items>
+                </Picker>
             </StackLayout>
 
             <StackLayout Orientation="Horizontal">
@@ -59,7 +69,7 @@
                        VerticalOptions="Center"
                        Margin="10"/>
                 <Label x:Name="Rate"
-                       Text="3    "
+                       Text="3"
                        VerticalOptions="Center"
                        Margin="10"/>
                 <Stepper x:Name="stepperAvgRate"
@@ -72,6 +82,8 @@
 
             <Button Clicked="SaveClicked" 
                     Text="Сохранить" />
+            <Button Clicked="LoadClicked"
+                    Text="Загрузить"/>
         </StackLayout>
     </ScrollView>
 
